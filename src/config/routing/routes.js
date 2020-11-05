@@ -4,7 +4,7 @@ import { HOME_PATH, LOGIN_PATH } from './paths';
 const PAGE_HOME = {
 	component: pages.Home,
 	path: HOME_PATH,
-	isPrivate: true
+	isPrivate: false
 }
 
 const PAGE_LOGIN = {
