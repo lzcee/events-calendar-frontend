@@ -1,0 +1,85 @@
+.formBox {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	max-width: 430px;
+	height: calc(100vh - 250px);
+	box-sizing: border-box;
+	padding: 46px;
+	border-radius: 40px 40px 0 0;
+	background-color: #ffffff;
+	color: #5a425c;
+}
+
+.formBox .title {
+	margin-bottom: 20px;
+}
+
+.formBox .form-field,
+.formBox .btnSubmit {
+	box-sizing: border-box;
+	width: 100%;
+	border: none;
+	border-radius: 23px;
+	padding: 10px 20px;
+	font-size: 14px;
+}
+
+.formBox .form-field {
+	background-color: #f3f3f3;
+	margin-bottom: 12px;
+}
+
+.formBox .form-field::placeholder {
+	color: #9a9a9a;
+}
+
+.formBox .btnSubmit {
+	background-color: #5a425c;
+	color: #ffffff;
+	cursor: pointer;
+	transition: background-color 200ms linear;
+}
+
+.formBox .btnSubmit:hover {
+	background-color: #463448;
+}
+
+.formBox .registerNow {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.formBox .registerNow .title {
+	margin-bottom: 10px;
+}
+
+.formBox .registerNow .link {
+	font-weight: 700;
+}
+
+.formBox .registerNow .link:hover {
+	text-decoration: underline;
+}
+
+@media(min-width: 768px) {
+	.formBox {
+		position: static;
+		transform: none;
+		border-radius: 40px;
+		height: initial;
+		padding: 80px 46px;
+	}
+
+	.formBox .form-field {
+		margin-bottom: 20px;
+	}
+
+	.formBox .form-field,
+	.formBox .btnSubmit {
+		padding: 18px 28px;
+		font-size: 16px;
+	}
+}

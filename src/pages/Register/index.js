@@ -4,13 +4,13 @@ import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
 
 import './style.css';
 
-const Login = () => {
+const Register = () => {
 	return (
-		<div className="login">
+		<div className="register">
 			<Logo className="logo"/>
-			<FormBox type="login" title="Entrar" />
+			<FormBox type="register" title="Cadastrar" />
 		</div>
 	)
 }
 
-export default Login;
+export default Register;

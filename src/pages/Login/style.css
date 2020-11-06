@@ -1,0 +1,37 @@
+.login {
+	position: relative;
+	padding-top: 64px;
+	height: 100vh;
+	box-sizing: border-box;
+	background-color: #5a425c;
+}
+
+.login .logo {
+	display: block;
+	margin: 0 auto;
+	width: 80px;
+	height: 80px;
+}
+
+@media(min-width: 768px) {
+	.login {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+	}
+
+	.login .logo {
+		margin: 0 64px 0 0;
+		width: 150px;
+		height: 150px;
+	}
+}
+
+@media(min-width: 1200px) {
+	.login .logo {
+		margin-right: 100px;
+		width: 200px;
+		height: 200px;
+	}
+}
