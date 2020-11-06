@@ -1,0 +1,117 @@
+.loginFormSection {
+	position: relative;
+	padding-top: 64px;
+	height: 100vh;
+	box-sizing: border-box;
+	background-color: #5a425c;
+}
+
+.loginFormSection .logo {
+	margin: 0 auto;
+	width: 80px;
+	height: 80px;
+}
+
+.loginFormSection .logo svg {
+	width: 100%;
+	height: 100%;
+}
+
+.loginFormSection .formWrapper {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	max-width: 430px;
+	height: calc(100vh - 250px);
+	box-sizing: border-box;
+	padding: 46px;
+	border-radius: 40px 40px 0 0;
+	background-color: #ffffff;
+	color: #5a425c;
+}
+
+.loginFormSection .formWrapper .title {
+	margin-bottom: 20px;
+}
+
+.loginFormSection .formWrapper .form-field,
+.loginFormSection .formWrapper .btnSubmit {
+	box-sizing: border-box;
+	width: 100%;
+	border: none;
+	border-radius: 23px;
+	padding: 10px 20px;
+	font-size: 14px;
+}
+
+.loginFormSection .formWrapper .form-field {
+	background-color: #f3f3f3;
+	margin-bottom: 12px;
+}
+
+.loginFormSection .formWrapper .form-field::placeholder {
+	color: #9a9a9a;
+}
+
+.loginFormSection .formWrapper .btnSubmit {
+	background-color: #5a425c;
+	color: #ffffff;
+	cursor: pointer;
+	transition: background-color 200ms linear;
+}
+
+.loginFormSection .formWrapper .btnSubmit:hover {
+	background-color: #463448;
+}
+
+.loginFormSection .formWrapper .registerNow {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.loginFormSection .formWrapper .registerNow .title {
+	margin-bottom: 10px;
+}
+
+.loginFormSection .formWrapper .registerNow .link {
+	font-weight: 700;
+}
+
+.loginFormSection .formWrapper .registerNow .link:hover {
+	text-decoration: underline;
+}
+
+@media(min-width: 768px) {
+	.loginFormSection {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+	}
+
+	.loginFormSection .logo {
+		margin: 0 100px 0 0;
+		width: 200px;
+		height: 200px;
+	}
+
+	.loginFormSection .formWrapper {
+		position: static;
+		transform: none;
+		border-radius: 40px;
+		height: initial;
+		padding: 80px 46px;
+	}
+
+	.loginFormSection .formWrapper .form-field {
+		margin-bottom: 20px;
+	}
+
+	.loginFormSection .formWrapper .form-field,
+	.loginFormSection .formWrapper .btnSubmit {
+		padding: 18px 28px;
+		font-size: 16px;
+	}
+}
