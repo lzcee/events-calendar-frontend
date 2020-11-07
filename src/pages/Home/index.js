@@ -1,7 +1,11 @@
+import EventsList from '../../components/EventsList';
+
+import './style.css';
+
 const Home = () => {
 	return (
-		<div>
-			Home
+		<div className="home">
+			<EventsList />
 		</div>
 	)
 }

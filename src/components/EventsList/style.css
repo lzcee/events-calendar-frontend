@@ -1,0 +1,69 @@
+.eventsList .calendar {
+	display: flex;
+	flex-direction: column;
+	padding: 24px 0 0;
+}
+
+.eventsList .calendar .flatpickr-input {
+	order: 2;
+	box-sizing: border-box;
+	text-align: left;
+	padding: 46px 46px 22px;
+	margin-top: 24px;
+	border-radius: 40px 40px 0 0;
+	border: none;
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: #5a425c;
+	pointer-events: none;
+}
+
+.eventsList .calendar .flatpickr-calendar {
+	margin: 0 auto;
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+}
+
+.eventsList .calendar .flatpickr-months .flatpickr-month,
+.eventsList .calendar .flatpickr-months .flatpickr-monthDropdown-months,
+.eventsList .calendar .flatpickr-weekday {
+	background-color: transparent;
+}
+
+.eventsList .calendar .flatpickr-months .flatpickr-monthDropdown-months {
+	margin-right: 25px;
+}
+
+.eventsList .calendar .flatpickr-months .flatpickr-monthDropdown-month {
+	background-color: #5a425c;
+}
+
+.eventsList .calendar .flatpickr-months .flatpickr-prev-month:hover svg,
+.eventsList .calendar .flatpickr-months .flatpickr-next-month:hover svg {
+	fill: #ffffff;
+}
+
+.eventsList .calendar .flatpickr-weekdays {
+	border-bottom: 1px solid #d4d4d438;
+	padding-bottom: 4px;
+	margin: 12px 0 8px;
+}
+
+.eventsList .calendar .flatpickr-weekday {
+	font-weight: 400;
+}
+
+.eventsList .calendar .flatpickr-day.selected {
+	background-color: #463448;
+	border-color: #463448;
+}
+
+.eventsList .list {
+	background-color: #ffffff;
+	list-style: none;
+	margin: 0;
+	padding: 10px 46px;
+	position: relative;
+    top: -10px;
+}

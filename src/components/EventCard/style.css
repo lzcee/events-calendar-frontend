@@ -1,0 +1,17 @@
+.eventCard {
+	background-color: #f3f3f3;
+	border-radius: 16px;
+	padding: 22px;
+	margin-bottom: 20px;
+	color: #5a425c;
+	box-shadow: 3px 2px 8px #d6d6d6;
+}
+
+.eventCard .title {
+	font-size: 1.25rem;
+	margin-bottom: 10px;
+}
+
+.eventCard .time {
+	font-size: 1.15rem;
+}
