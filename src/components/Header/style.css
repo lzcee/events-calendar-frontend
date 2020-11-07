@@ -1,0 +1,37 @@
+.header {
+	position: fixed;
+	box-sizing: border-box;
+	top: 0;
+	width: 100%;
+	height: var(--header-height);
+	padding: 12px var(--container-size);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #463448f2;
+	border-radius: 0 0 10px 10px;
+	z-index: 5;
+}
+
+.header .logo {
+	width: 30px;
+	height: 30px;
+	opacity: 0.9;
+}
+
+.header .hello {
+	font-size: 1.25rem;
+	color: #ffffff;
+}
+
+.header .logout {
+	width: 22px;
+	height: 22px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.header .logout svg {
+	fill: #ffffff;
+}

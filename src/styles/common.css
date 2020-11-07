@@ -67,6 +67,7 @@ button {
    ========================================================================== */
 :root {
 	--container-size: 24px;
+	--header-height: 54px;
 }
 
 @media (min-width: 768px) {

@@ -26,7 +26,7 @@ const EventsList = () => {
 	const [events, setEvents] = useState(eventsDefault);
 	
 	const eventsList = events.map(event => {
-		return <EventCard {...event} />
+		return <EventCard key={event.id} {...event} />
 	});
 
 	return (

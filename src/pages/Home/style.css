@@ -1,3 +1,4 @@
 .home {
+	padding-top: var(--header-height);
 	background-color: #5a425c;
 }
