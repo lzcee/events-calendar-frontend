@@ -5,6 +5,12 @@
 	border-radius: 50%;
 	width: 48px;
 	height: 48px;
+	cursor: pointer;
+	transition: background-color 250ms linear;
+}
+
+.addEventButton:hover {
+	background-color: #826a86f2;
 }
 
 .addEventButton::after {

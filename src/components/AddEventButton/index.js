@@ -1,8 +1,18 @@
+import { useHistory } from 'react-router-dom';
+import { EVENT_PATH } from '../../config/routing/paths';
+
 import './style.css';
 
 const AddEventButton = () => {
+
+	const history = useHistory();
+
+	const handleClick = () => {
+		history.push({ pathname: EVENT_PATH });
+	}
+
 	return (
-		<button className="addEventButton"></button>
+		<button className="addEventButton" aria-label="Adicionar Evento" onClick={handleClick}></button>
 	);
 }
 
