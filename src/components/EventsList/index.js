@@ -1,30 +1,37 @@
-import Flatpickr from 'react-flatpickr';
 import { Portuguese } from "flatpickr/dist/l10n/pt.js"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import api from '../../config/services/api';
+
+import Flatpickr from 'react-flatpickr';
 import EventCard from '../EventCard';
 
 import 'flatpickr/dist/themes/dark.css';
 import './style.css';
 
-const eventsDefault = [
-	{
-		"id" : "1",
-		"title" : "Event Title",
-		"startTime" : "10:00:00",
-		"endTime" : "12:00:00"
-	},
-	{
-		"id" : "2",
-		"title" : "Event Title 2",
-		"startTime" : "14:00:00",
-		"endTime" : "14:30:00"
-	}
-]
+const EventsList = ({ id, token }) => {
 
-const EventsList = () => {
 	const [date, setDate] = useState(new Date());
-	const [events, setEvents] = useState(eventsDefault);
-	
+	const [events, setEvents] = useState([]);
+
+	const payload = {
+		startTime: Math.floor(new Date(date.setHours(0, 0, 0, 0)).getTime() / 1000),
+		endTime: Math.floor(new Date(date.setHours(23, 59, 59, 999)).getTime() / 1000),
+		ownerUser: id,
+		token: token
+	}
+
+	useEffect(() => {
+
+		api.events.listByDay(payload)
+			.then(response => {
+				setEvents(response.data.events)
+			})
+			.catch(err => {
+				console.log(err)
+			})
+
+	},[date])
+
 	const eventsList = events.map(event => {
 		return <EventCard key={event.id} {...event} />
 	});
@@ -34,12 +41,12 @@ const EventsList = () => {
 			<div className="calendar">
 				<Flatpickr
 					value={date}
-					options={{ dateFormat: "d \\de M" , inline: true, locale: Portuguese }}
-					onChange={e => setDate(e)}
+					options={{ dateFormat: "d \\de M", inline: true, locale: Portuguese }}
+					onChange={e => setDate(e[0])}
 				/>
 			</div>
 			<ul className="list">
-				{ eventsList }
+				{eventsList}
 			</ul>
 		</section>
 	)

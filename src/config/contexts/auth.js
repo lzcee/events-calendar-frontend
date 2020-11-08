@@ -23,7 +23,7 @@ export const UserProvider = ({ children }) => {
 		history.push({ pathname: HOME_PATH });
 	};
 
-	const logout = () => {
+	const logout = (history) => {
 
 		localStorage.removeItem("@App:token");
 		localStorage.removeItem("@App:id");
@@ -34,6 +34,8 @@ export const UserProvider = ({ children }) => {
 			token: '',
 			auth: false
 		}));
+
+		history.push({ pathname: LOGIN_PATH });
 	};
 
 	return (

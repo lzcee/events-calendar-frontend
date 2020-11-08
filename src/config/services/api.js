@@ -13,6 +13,13 @@ const users = {
 	}
 };
 
+const events = {
+	listByDay(payload) {
+		return api.get(`/events?startTime=${payload.startTime}&endTime=${payload.endTime}`, { headers: { 'x-access-token' : payload.token, 'owner-user' : payload.ownerUser } });
+	}
+}
+
 export default {
-	users
+	users,
+	events
 }
