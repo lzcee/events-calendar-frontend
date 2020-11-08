@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { REGISTER_PATH } from '../../config/routing/paths';
 
 import api from '../../config/services/api';
@@ -10,6 +10,7 @@ import './style.css';
 const FormBox = ({ type, title }) => {
 
 	const { login } = useContext(UserContext);
+	const history = useHistory();
 
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
@@ -40,11 +41,10 @@ const FormBox = ({ type, title }) => {
 			setMessage("");
 			api.users.userRegister(data)
 				.then((response) => {
-					login(response.data.user.name, response.data.user.id, response.data.token)
-					console.log(response)
+					login(response.data.user.name, response.data.user.id, response.data.token, history)
 				})
 				.catch((err) => {
-					console.log(err)
+					setMessage("Ops! Não foi possível concluir o cadastro, tente novamente!")
 				});
 		}
 		else {

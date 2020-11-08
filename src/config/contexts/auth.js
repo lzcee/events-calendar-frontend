@@ -1,12 +1,14 @@
 import { createContext, useState } from 'react';
 
+import { HOME_PATH, LOGIN_PATH } from '../routing/paths';
+
 const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
 
 	const [user, setUser] = useState({});
 
-	const login = (name, id, token) => {
+	const login = (name, id, token, history) => {
 
 		localStorage.setItem("@App:token", token);
 		localStorage.setItem("@App:id", id);
@@ -17,6 +19,8 @@ export const UserProvider = ({ children }) => {
 			token,
 			auth: true
 		}));
+
+		history.push({ pathname: HOME_PATH });
 	};
 
 	const logout = () => {
@@ -34,7 +38,7 @@ export const UserProvider = ({ children }) => {
 
 	return (
 		<UserContext.Provider value={{ user, login, logout }}>
-			{ children}
+			{children}
 		</UserContext.Provider>
 	);
 };
