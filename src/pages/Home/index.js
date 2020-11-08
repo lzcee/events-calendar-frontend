@@ -5,6 +5,7 @@ import AddEventButton from '../../components/AddEventButton';
 import './style.css';
 
 const Home = () => {
+
 	return (
 		<div className="home">
 			<Header name="Fulano" />

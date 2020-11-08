@@ -1,21 +1,62 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { REGISTER_PATH } from '../../config/routing/paths';
+
+import api from '../../config/services/api';
+import UserContext from '../../config/contexts/auth';
 
 import './style.css';
 
 const FormBox = ({ type, title }) => {
+
+	const { login } = useContext(UserContext);
 
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [message, setMessage] = useState("");
 
+	const validateEmail = (email) => {
+		var regex = /^[\w-s.]+@([\w-]+.)+[\w-]{2,4}$/;
+		return regex.test(String(email).toLowerCase());
+	};
+
+	const validatePassword = (password) => {
+		return password !== "" ? true : false;
+	};
+
+	const validateName = (name) => {
+		return name !== "" ? true : false;
+	};
+
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		if (validateName(name) && validateEmail(email) && validatePassword(password)) {
+			const data = {
+				name,
+				email,
+				password
+			}
+			setMessage("");
+			api.users.userRegister(data)
+				.then((response) => {
+					login(response.data.user.name, response.data.user.id, response.data.token)
+					console.log(response)
+				})
+				.catch((err) => {
+					console.log(err)
+				});
+		}
+		else {
+			setMessage("Ops! Verifique os campos antes de enviar!")
+		}
+	}
+
 	return (
 		<div className="formBox">
 			<h2 className="title">{title}</h2>
-			<form className="form" method="post">
-				{ type === 'register' &&
+			<form className="form" method="post" onSubmit={(event) => handleSubmit(event)}>
+				{type === 'register' &&
 					<input className="form-field" type="text" name="name" id="name" placeholder="Nome" aria-label="Email" required onChange={e => setName(e.target.value)} />
 				}
 				<input className="form-field" type="email" name="email" id="email" placeholder="E-mail" aria-label="E-mail" required onChange={e => setEmail(e.target.value)} />
