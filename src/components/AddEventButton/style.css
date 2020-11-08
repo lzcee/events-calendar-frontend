@@ -1,0 +1,14 @@
+.addEventButton {
+	background-color: #463448f2;
+	box-shadow: 1px 1px 6px #d4d4d4;
+	border: none;
+	border-radius: 50%;
+	width: 48px;
+	height: 48px;
+}
+
+.addEventButton::after {
+	content: "+";
+	font-size: 25px;
+	color: #ffffff;
+}

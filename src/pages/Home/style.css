@@ -2,3 +2,9 @@
 	padding-top: var(--header-height);
 	background-color: #5a425c;
 }
+
+.home .addEventButton {
+	position: fixed;
+	bottom: 12px;
+	right: var(--container-size);
+}
