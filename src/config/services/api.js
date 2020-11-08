@@ -5,8 +5,11 @@ const api = axios.create({
 });
 
 const users = {
-	userRegister(payload) {
+	register(payload) {
 		return api.post('/users', payload);
+	},
+	login(payload) {
+		return api.get('/users', { auth: { username: payload.email, password: payload.password } });
 	}
 };
 

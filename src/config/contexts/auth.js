@@ -32,7 +32,7 @@ export const UserProvider = ({ children }) => {
 			name: '',
 			id: '',
 			token: '',
-			auth: false,
+			auth: false
 		}));
 	};
 

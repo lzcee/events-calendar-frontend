@@ -32,14 +32,28 @@ const FormBox = ({ type, title }) => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		if (validateName(name) && validateEmail(email) && validatePassword(password)) {
+		if (type === 'register' && validateName(name) && validateEmail(email) && validatePassword(password)) {
 			const data = {
 				name,
 				email,
 				password
 			}
 			setMessage("");
-			api.users.userRegister(data)
+			api.users.register(data)
+				.then((response) => {
+					login(response.data.user.name, response.data.user.id, response.data.token, history)
+				})
+				.catch((err) => {
+					setMessage("Ops! Não foi possível concluir o cadastro, tente novamente!")
+				});
+		}
+		else if (type === 'login' && validateEmail(email) && validatePassword(password)) {
+			const data = {
+				email,
+				password
+			}
+			setMessage("");
+			api.users.login(data)
 				.then((response) => {
 					login(response.data.user.name, response.data.user.id, response.data.token, history)
 				})
