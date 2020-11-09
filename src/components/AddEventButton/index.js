@@ -8,7 +8,7 @@ const AddEventButton = () => {
 	const history = useHistory();
 
 	const handleClick = () => {
-		history.push({ pathname: EVENT_PATH });
+		history.push({ pathname: EVENT_PATH, state: { type: 'create', title: 'Criar Evento' } });
 	}
 
 	return (

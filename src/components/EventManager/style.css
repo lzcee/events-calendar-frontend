@@ -1,0 +1,168 @@
+.eventManager .topBar {
+	position: relative;
+	padding: 12px var(--container-size);
+	font-size: 1.25rem;
+	border-bottom: 1px solid #5a425c24;
+}
+
+.eventManager .topBar .btnGoBack {
+	border: none;
+	background-color: transparent;
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	left: var(--container-size);
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.eventManager .topBar .btnGoBack::after {
+	content: "";
+	border: solid #5a425c;
+	border-width: 0 2px 2px 0;
+	display: inline-block;
+	padding: 5px;
+	transform: rotate(135deg);
+}
+
+.eventManager .topBar .title {
+	color: #5a425c;
+	text-align: center;
+}
+
+.eventManager .form {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 430px;
+	box-sizing: border-box;
+	padding: 46px var(--container-size);
+	border-radius: 0 0 40px 40px;
+	color: #5a425c;
+}
+
+.eventManager .form .title {
+	margin-bottom: 20px;
+}
+
+.eventManager .form .flatpickr-input {
+	display: none;
+}
+
+.eventManager .form .flatpickr-calendar {
+	overflow: hidden;
+	width: 100%;
+	border-radius: 40px;
+	background-color: #f3f3f3;
+	margin-bottom: 12px;
+	border: none;
+	box-shadow: none;
+}
+
+.eventManager .form .flatpickr-calendar .numInputWrapper span {
+	right: 14px;
+	opacity: 1;
+}
+
+.eventManager .form .flatpickr-calendar .numInputWrapper span.arrowUp:after,
+.eventManager .form .flatpickr-calendar .numInputWrapper span.arrowDown:after {
+	border-bottom-color: #c5abc7;
+	border-top-color: #c5abc7;
+}
+
+.eventManager .form .flatpickr-calendar.hasTime .flatpickr-time {
+	border: none;
+}
+
+.eventManager .form .flatpickr-time input.flatpickr-hour {
+	font-weight: 400;
+}
+
+.eventManager .form .flatpickr-time input,
+.eventManager .form .flatpickr-time .flatpickr-time-separator {
+	color: #9a9a9a;
+}
+
+.flatpickr-time input:hover,
+.flatpickr-time input:focus {
+	background-color: #dcdcdc;
+}
+
+.eventManager .form .field-text {
+	font-size: 1.15rem;
+	padding: 0 20px;
+	color: #9a9a9a;
+}
+
+.eventManager .form .form-field,
+.eventManager .form .btnSubmit {
+	box-sizing: border-box;
+	width: 100%;
+	border: none;
+	border-radius: 23px;
+	padding: 10px 20px;
+	font-size: 14px;
+}
+
+.eventManager .form .form-field {
+	background-color: #f3f3f3;
+	margin-bottom: 12px;
+}
+
+.eventManager .form .form-field::placeholder {
+	color: #9a9a9a;
+}
+
+.eventManager .form .btnSubmit {
+	margin-top: 24px;
+	background-color: #5a425c;
+	color: #ffffff;
+	cursor: pointer;
+	transition: background-color 200ms linear;
+}
+
+.eventManager .form .message {
+	position: absolute;
+	margin-top: 25px;
+	color: #ca1212;
+}
+
+.eventManager .form .btnSubmit:hover {
+	background-color: #463448;
+}
+
+.eventManager.view .form input {
+	pointer-events: none;
+}
+
+.eventManager.view .form .flatpickr-calendar .numInputWrapper span,
+.eventManager.view .form input[type="submit"] {
+	display: none;
+}
+
+@media(min-width: 768px) {
+	.eventManager .form {
+		margin-top: 24px;
+		border-radius: 40px;
+		padding: 80px 46px;
+		box-shadow: 1px 11px 10px 0px #dedede;
+	}
+
+	.eventManager .form .form-field,
+	.eventManager .form .flatpickr-calendar {
+		margin-bottom: 20px;
+	}
+
+	.eventManager .form .form-field,
+	.eventManager .form .btnSubmit {
+		padding: 18px 28px;
+		font-size: 16px;
+	}
+
+	.eventManager .form .flatpickr-calendar {
+		padding: 7px 0;
+	}
+}

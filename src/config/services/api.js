@@ -15,7 +15,10 @@ const users = {
 
 const events = {
 	listByDay(payload) {
-		return api.get(`/events?startTime=${payload.startTime}&endTime=${payload.endTime}`, { headers: { 'x-access-token' : payload.token, 'owner-user' : payload.ownerUser } });
+		return api.get(`/events?startTime=${payload.startTime}&endTime=${payload.endTime}`, { headers: { 'x-access-token': payload.token, 'owner-user': payload.ownerUser } });
+	},
+	create(payload) {
+		return api.post('/events', payload.event, { headers: { 'x-access-token': payload.token } });
 	}
 }
 

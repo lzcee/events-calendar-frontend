@@ -22,6 +22,8 @@ const EventsList = ({ id, token }) => {
 
 	useEffect(() => {
 
+		localStorage.setItem('@App:selectedDate', date);
+
 		api.events.listByDay(payload)
 			.then(response => {
 				setEvents(response.data.events)
