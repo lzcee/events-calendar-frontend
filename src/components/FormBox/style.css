@@ -17,6 +17,10 @@
 	margin-bottom: 20px;
 }
 
+.formBox .form {
+	position: relative;
+}
+
 .formBox .form-field,
 .formBox .btnSubmit {
 	box-sizing: border-box;
@@ -45,6 +49,14 @@
 
 .formBox .btnSubmit:hover {
 	background-color: #463448;
+}
+
+.formBox .message {
+	position: absolute;
+	bottom: -80px;
+	width: 100%;
+	text-align: center;
+	color: #ca1212;
 }
 
 .formBox .registerNow {

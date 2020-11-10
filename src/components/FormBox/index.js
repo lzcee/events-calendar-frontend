@@ -58,7 +58,7 @@ const FormBox = ({ type, title }) => {
 					login(response.data.user.name, response.data.user.id, response.data.token, history)
 				})
 				.catch((err) => {
-					setMessage("Ops! Não foi possível concluir o cadastro, tente novamente!")
+					setMessage("Ops! E-mail/senha incorretos, tente novamente!")
 				});
 		}
 		else {
