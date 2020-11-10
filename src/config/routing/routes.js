@@ -1,5 +1,5 @@
 import pages from '../../pages';
-import { HOME_PATH, LOGIN_PATH, REGISTER_PATH, EVENT_PATH } from './paths';
+import { HOME_PATH, LOGIN_PATH, REGISTER_PATH, EVENT_PATH, EVENT_DELETE_PATH } from './paths';
 
 const PAGE_HOME = {
 	component: pages.Home,
@@ -25,6 +25,12 @@ const PAGE_EVENT = {
 	isPrivate: true
 }
 
-const routes = [PAGE_HOME, PAGE_LOGIN, PAGE_REGISTER, PAGE_EVENT];
+const PAGE_EVENT_DELETE = {
+	component: pages.DeleteEvent,
+	path: EVENT_DELETE_PATH,
+	isPrivate: true
+}
+
+const routes = [PAGE_HOME, PAGE_LOGIN, PAGE_REGISTER, PAGE_EVENT, PAGE_EVENT_DELETE];
 
 export default routes;

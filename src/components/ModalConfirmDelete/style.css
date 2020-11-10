@@ -1,0 +1,59 @@
+.modalWrapper {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.modalWrapper .modal {
+	max-width: 300px;
+	padding: 46px;
+	border-radius: 40px;
+	background-color: #ffffff;
+	box-shadow: 1px 11px 10px 0px #dedede;
+}
+
+.modalWrapper .modal .eventName {
+	font-size: 2rem;
+	margin-bottom: 24px;
+}
+
+.modalWrapper .modal .eventName span {
+	font-weight: 700;
+}
+
+.modalWrapper .modal .title {
+	font-weight: 700;
+	font-size: 1.25rem;
+	margin-bottom: 22px;
+}
+
+.modalWrapper .modal .modalBtnWrapper {
+	display: flex;
+	justify-content: space-around;
+}
+
+.modalWrapper .modal .modalBtnWrapper .modalBtn {
+	box-sizing: border-box;
+	width: 40%;
+	border: none;
+	border-radius: 23px;
+	padding: 10px 20px;
+	font-size: 14px;
+	background-color: #5a425c;
+	color: #ffffff;
+	text-align: center;
+	cursor: pointer;
+	transition: background-color 200ms linear;
+}
+
+.modalWrapper .modal .modalBtnWrapper .modalBtn:hover {
+	background-color: #463448;
+}
