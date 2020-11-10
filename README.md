@@ -7,5 +7,7 @@ For the development React was used in addition to the React Router library. To r
 
 ## Installation
 1 - Clone this repository
+
 2 - Run `yarn install` and `yarn start`
+
 3 - Enjoy :)
