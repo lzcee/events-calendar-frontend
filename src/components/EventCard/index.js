@@ -21,7 +21,7 @@ const EventCard = ({ description, startTime, endTime, id }) => {
 			<h3 className="title">{description}</h3>
 			<p className="time">{startHour} até {endHour}</p>
 			<div className="btnWrapper">
-				<Link className="btn" to={{ pathname: EVENT_PATH, state: { type: 'edit', title: 'Editar Evento', event } }}>
+				<Link className="btn" to={{ pathname: EVENT_PATH, state: { type: 'update', title: 'Editar Evento', event } }}>
 					Editar
 				</Link>
 				<Link className="btn" to={{ pathname: EVENT_DELETE_PATH, state: { event } }}>

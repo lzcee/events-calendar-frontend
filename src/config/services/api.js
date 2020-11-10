@@ -20,8 +20,11 @@ const events = {
 	create(payload) {
 		return api.post('/events', payload.event, { headers: { 'x-access-token': payload.token } });
 	},
-	delete(payload) { console.log(payload)
-		return api.delete(`/events/${payload.id}`, { data: { ownerUser: payload.ownerUser } , headers: { 'x-access-token': payload.token } });
+	delete(payload) {
+		return api.delete(`/events/${payload.id}`, { data: { ownerUser: payload.ownerUser }, headers: { 'x-access-token': payload.token } });
+	},
+	update(payload) {
+		return api.put(`/events/${payload.id}`, payload.event, { headers: { 'x-access-token': payload.token } });
 	}
 }
 
