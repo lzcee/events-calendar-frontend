@@ -49,6 +49,9 @@ const EventsList = ({ id, token }) => {
 			</div>
 			<ul className="list">
 				{eventsList}
+				{ events.length === 0 &&
+					<li>Sem eventos hoje</li>
+				}
 			</ul>
 		</section>
 	)
