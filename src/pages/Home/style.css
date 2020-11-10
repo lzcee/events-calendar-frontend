@@ -8,3 +8,9 @@
 	bottom: 12px;
 	right: var(--container-size);
 }
+
+@media (min-width: 768px) {
+	.home .addEventButton {
+		bottom: 46px;
+	}
+}
